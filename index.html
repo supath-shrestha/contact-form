@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Contact form</title>
+</head>
+
+<body class="min-h-screen w-full bg-main py-6 px-4 md:py-[4.5rem]">
+  <main class="md:w-[40%] relative bg-white rounded-2xl font-karla text-label text-[1rem] p-4 md:px-8 md:mx-auto">
+    <h1 id="htag" class="hero font-bold text-[1.75rem] mb-4">Contact Us</h1>
+
+    <form id="form" action="#">
+      <div class="flex flex-col gap-[1.15rem]">
+        <!-- name input container for full name  -->
+        <div class="flex flex-row flex-wrap gap-[1.15rem]">
+          <!-- first name input field -->
+          <div class="flex-grow flex flex-col gap-2">
+            <label for="fname">First Name<span class="text-button">&ensp;*</span></label>
+            <input type="text" id="fname"
+              class="w-full outline-none border rounded-lg border-bcolor focus:border-button hover:border-button hover:cursor-pointer py-2 px-6"
+              autocomplete="off">
+            <span id="fnameErr" class="hidden text-error text-sm">This field is required</span>
+          </div>
+
+          <!-- last name input field -->
+          <div class="flex-grow flex flex-col gap-2">
+            <label for="lname">Last Name<span class="text-button">&ensp;*</span></label>
+            <input type="text" id="lname"
+              class="w-full outline-none border rounded-lg border-bcolor focus:border-button hover:border-button hover:cursor-pointer py-2 px-6"
+              autocomplete="off">
+            <span id="lnameErr" class="hidden text-error text-sm">This field is required</span>
+
+          </div>
+        </div>
+
+        <!-- email input field  -->
+        <div class="flex flex-col gap-2">
+          <label for="email">Email Address<span class="text-button">&ensp;*</span></label>
+          <input type="text" id="email"
+            class="outline-none border rounded-lg border-bcolor focus:border-button hover:border-button hover:cursor-pointer py-2 px-6"
+            autocomplete="off">
+          <span id="emailErr" class="hidden text-error text-sm">This field is required</span>
+        </div>
+
+        <!-- query type radio button  -->
+        <div class="flex flex-col gap-2">
+          <h4>Query Type<span class="text-button">&ensp;*</span></h4>
+
+          <div class="flex flex-row flex-wrap gap-[1.15rem]">
+            <div
+              class="flex-grow flex items-center gap-2 border rounded-lg border-bcolor has-[:checked]:bg-main has-[:checked]:border-button px-6 py-2">
+              <input type="radio" name="queryType" id="generalEnquiry"
+                class="w-[1rem] h-[1rem] cursor-pointer accent-button">
+              <label for="generalEnquiry" class="cursor-pointer">General Enquiry</label>
+            </div>
+
+            <div
+              class="flex-grow flex items-center gap-2 border rounded-lg border-bcolor has-[:checked]:bg-main has-[:checked]:border-button px-6 py-2">
+              <input type="radio" name="queryType" id="submitRequest"
+                class="w-[1rem] h-[1rem] cursor-pointer accent-button">
+              <label for="submitRequest" class="cursor-pointer">Submit Request</label>
+            </div>
+          </div>
+
+
+          <span id="queryTypeErr" class="hidden text-error text-sm">Please select a query type</span>
+        </div>
+
+        <!-- message area  -->
+        <div class="flex flex-col gap-2">
+          <label for="message">Message<span class="text-button">&ensp;*</span></label>
+          <textarea name="message" id="message"
+            class="h-[12rem] md:h-[5rem] resize-none outline-none border rounded-lg border-bcolor focus:border-button hover:border-button hover:cursor-pointer py-2 px-6"></textarea>
+          <span id="messageErr" class="hidden text-error text-sm">This field is required</span>
+        </div>
+
+        <!-- consent checkbox  -->
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-4">
+            <input type="checkbox" id="consent" class="w-[1rem] h-[1rem] cursor-pointer accent-button"
+              autocomplete="off">
+            <label for="consent" class="cursor-pointer">I consent to being contacted by the team<span
+                class="text-button">&nbsp;*</span></label>
+          </div>
+
+          <span id="consentErr" class="hidden text-error text-sm">To submit this form, please consent to being
+            contacted</span>
+        </div>
+
+        <!-- submit button goes here  -->
+        <button type="submit" id="submitBtn"
+          class="bg-button rounded-lg text-white py-3 hover:bg-green-950">Submit</button>
+      </div>
+    </form>
+
+    <div id="messageSentBox"
+      class="hidden absolute top-[-1rem] left-0 md:left-[20%] md:top-[-4rem] rounded-lg bg-[#2a4244] p-4">
+      <div class="flex gap-2 items-center mb-2">
+        <img src="./assets/images/icon-success-check.svg" alt="Success Icon">
+        <span class="text-white">Message Sent!</span>
+      </div>
+      <p class="text-bcolor text-sm text-wrap">Thanks for completing the form. We'll be in touch soon!
+      </p>
+    </div>
+  </main>
+
+  <!-- <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer> -->
+  <script src="script.js"></script>
+</body>
+
+</html>
